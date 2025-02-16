@@ -2,12 +2,12 @@ import { useDispatch } from 'react-redux'
 import { Produto as ProdutoType } from '../../App'
 import * as S from './styles'
 import { adicionar } from '../../store/reducers/carrinho'
+
 type Props = {
   produto: ProdutoType
   favoritar: (produto: ProdutoType) => void
   estaNosFavoritos: boolean
 }
-
 export const paraReal = (valor: number) =>
   new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(
     valor

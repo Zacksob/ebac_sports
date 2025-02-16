@@ -21,9 +21,18 @@ const carrinhoSlice = createSlice({
       } else {
         state.items.push(produto)
       }
+    },
+    favoritar: (state, action: PayloadAction<Produto>) => {
+      const produto = action.payload
+
+      if (state.items.find((p) => p.id === produto.id)) {
+        state.items = state.items.filter((p) => p.id !== produto.id)
+      } else {
+        state.items.push(produto)
+      }
     }
   }
 })
-
 export const { adicionar } = carrinhoSlice.actions
+export const { favoritar } = carrinhoSlice.actions
 export default carrinhoSlice.reducer

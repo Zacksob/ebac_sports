@@ -3,7 +3,6 @@ import { Produto as ProdutoType } from '../App'
 import Produto from '../components/Produto'
 import { useGetProdutosQuery } from '../services/api'
 import { RootReducer } from '../store'
-import { favoritar } from '../store/reducers/carrinho'
 
 import * as S from './styles'
 const ProdutosComponent = () => {
@@ -25,7 +24,6 @@ const ProdutosComponent = () => {
             estaNosFavoritos={produtoEstaNosFavoritos(produto)}
             key={produto.id}
             produto={produto}
-            favoritar={favoritar}
           />
         ))}
       </S.Produtos>
